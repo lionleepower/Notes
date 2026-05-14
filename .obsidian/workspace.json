@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "学习与算法/linux基本操作/3.Miscellaneous and Tips/3.5 Optional Topics.md",
+                "file": "日常随笔与灵感/想法与记录/2026-05-14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3.5 Optional Topics"
+              "title": "2026-05-14"
             }
           },
           {
@@ -238,8 +238,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -248,8 +248,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           },
           {
@@ -285,10 +285,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2194732f8b51738d",
+  "active": "cc0d0ed2ec1affb4",
   "lastOpenFiles": [
-    "学习与算法/linux基本操作/3.Miscellaneous and Tips/3.4 File Permissions.md",
     "学习与算法/linux基本操作/3.Miscellaneous and Tips/3.5 Optional Topics.md",
+    "日常随笔与灵感/书籍灵感/开头/学院相遇.md",
+    "学习与算法/linux基本操作/3.Miscellaneous and Tips/3.4 File Permissions.md",
     "学习与算法/linux基本操作/3.Miscellaneous and Tips/3.3 Filesystem.md",
     "学习与算法/linux基本操作/0.Background/0.2 background.md",
     "Pasted image 20260514183135.png",
@@ -314,7 +315,6 @@
     "学习与算法/MarkDown基本语法/Advanced operation.md",
     "学习与算法/MarkDown基本语法/basic operation.md",
     "学习与算法/linux基本操作/1.Shells/1.6.1 exercise.md",
-    "日常随笔与灵感/书籍灵感/开头/学院相遇.md",
     "学习与算法/linux基本操作/1.Shells/1.6 Searching.md",
     "学习与算法/linux基本操作/1.Shells",
     "学习与算法/linux基本操作/0.Background",
