@@ -64,27 +64,17 @@
             }
           },
           {
-            "id": "cc0d0ed2ec1affb4",
+            "id": "38416b0174abcfad",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "日常随笔与灵感/书籍灵感/开头/学院相遇.md",
+                "file": "课业学习/speaker_notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "学院相遇"
-            }
-          },
-          {
-            "id": "38416b0174abcfad",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "title": "speaker_notes"
             }
           }
         ],
@@ -285,9 +275,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "cc0d0ed2ec1affb4",
+  "active": "2194732f8b51738d",
   "lastOpenFiles": [
+    "课业学习/QuestionsMay.md",
+    "课业学习/speaker_notes.md",
+    "日常随笔与灵感/想法与记录/2026-05-15.md",
+    "课业学习",
+    "日常随笔与灵感/agent聊天设定/Let's 发癫！！！.md",
+    "日常随笔与灵感/agent聊天设定",
     "日常随笔与灵感/想法与记录/2026-05-14.md",
+    "conflict-files-obsidian-git.md",
     "日常随笔与灵感/书籍灵感/开头/学院相遇.md",
     "学习与算法/MarkDown基本语法/Advanced operation.md",
     "学习与算法/MarkDown基本语法/basic operation.md",
@@ -309,13 +306,8 @@
     "学习与算法/linux基本操作/3.Miscellaneous and Tips/3.2 Remote Connections.md",
     "学习与算法/linux基本操作/3.Miscellaneous and Tips/3.1 Accounts.md",
     "学习与算法/linux基本操作/2.Text Editors/2.1 overview.md",
-    "学习与算法/linux基本操作/2.Text Editors/2.2 vim.md",
     "学习与算法/linux基本操作/3.Miscellaneous and Tips",
-    "学习与算法/linux基本操作/1.Shells/1.8 Environment Variables.md",
     "学习与算法/linux基本操作/2.Text Editors",
-    "学习与算法/linux基本操作/1.Shells/1.7 Job Control.md",
-    "学习与算法/linux基本操作/1.Shells/1.1 Introduction.md",
-    "学习与算法/linux基本操作/1.Shells/1.6.1 exercise.md",
     "学习与算法/linux基本操作/1.Shells",
     "学习与算法/linux基本操作/0.Background",
     "学习与算法/linux基本操作",
@@ -330,8 +322,6 @@
     "attachments/Exported image 20260514133544-1.png",
     "attachments/Exported image 20260514133547-0.png",
     "attachments/Exported image 20260514133545-2.png",
-    "attachments/Exported image 20260514133548-1.png",
-    "attachments",
-    "日常随笔与灵感/想法与记录"
+    "attachments/Exported image 20260514133548-1.png"
   ]
 }
