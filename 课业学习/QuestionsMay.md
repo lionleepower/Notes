@@ -8,7 +8,7 @@
 我选择 PETSc 是因为它是科学计算和并行线性求解领域中非常有代表性的库，被广泛使用，而且它最近引入了 OpenMP backend，这使它既有实际价值，也有研究价值。研究 PETSc 的表现不仅能回答一个具体的软件问题，也可能为实际用户提供配置建议。
 
 
-I chose PETSc because it is a highly representative and widely used library in scientific computing and parallel linear solvers. Its recently introduced OpenMP backend makes it both practically relevant and academically interesting. Studying PETSc can answer a concrete software question while also providing useful configuration guidance for real users.
+I chose PETSc because it is a ==highly representative and widely used library in scientific computing and parallel linear solvers.== Its recently introduced OpenMP backend makes it both practically relevant and academically interesting. Studying PETSc can answer a concrete software question while also providing useful configuration guidance for real users.
 
   
 
@@ -19,7 +19,7 @@ I chose PETSc because it is a highly representative and widely used library in s
 ARCHER2 是一个非常适合起步的平台，因为它是现代 many-core NUMA 架构，节点内部的拓扑结构复杂，正好适合研究 MPI-only 和 hybrid MPI+OpenMP 在真实 HPC 系统上的表现差异。如果时间和资源允许，后续也可以扩展到 Cirrus，用来判断趋势是否依赖具体平台。
 
 
-ARCHER2 is a good starting platform because it is a modern many-core NUMA system with a complex node-level topology. That makes it well suited for studying the difference between MPI-only and hybrid MPI+OpenMP execution on a realistic HPC machine. If time and resources allow, the study could later extend to Cirrus to assess whether the trends are platform-dependent.
+ARCHER2 is a good starting platform because it is a ==modern many-core NUMA system with a complex node-level topology==. That makes it well suited for studying the difference between MPI-only and hybrid MPI+OpenMP execution on a ==realistic HPC machine==. If time and resources allow, the study could later extend to Cirrus to assess whether the trends are platform-dependent.
 
   
 
@@ -31,7 +31,9 @@ ARCHER2 is a good starting platform because it is a modern many-core NUMA system
 
 
 
-The preliminary results suggest that moderate threading reduces the number of MPI ranks and therefore lowers communication overhead. However, high thread counts introduce more synchronisation, memory bandwidth contention, and cache or NUMA locality issues. Profiling also shows that the key PETSc kernels are not yet fully parallelised, so more threads do not necessarily translate into better performance.
+The preliminary results suggest that moderate threading ==reduces the number of MPI ranks and therefore lowers communication overhead.== However, high thread counts introduce more synchronisation, memory bandwidth contention, and cache or NUMA locality issues. 
+
+Profiling also shows that the key PETSc kernels are ==not yet fully parallelised==, so more threads do not necessarily translate into better performance.
 
   
 
@@ -41,7 +43,8 @@ The preliminary results suggest that moderate threading reduces the number of MP
 不一定。MPI-only 仍然是一个非常重要而且稳定的 baseline。我的目标不是证明 hybrid 一定更好，而是找出在什么条件下 hybrid 更有优势，以及什么时候 MPI-only 仍然是更合适的选择。
 
   
-Not necessarily. MPI-only remains a very important and stable baseline. My goal is not to prove that hybrid execution is always better, but to identify the conditions under which hybrid is advantageous and when MPI-only is still the more appropriate choice.
+==Not necessarily==. ==MPI-only remains a very important and stable baselin==e. 
+My goal is not to prove that hybrid execution is always better, but to identify the conditions under which hybrid is advantageous and when MPI-only is still the more appropriate choice.
 
   
 
@@ -72,7 +75,9 @@ I also report runtime, speedup, and efficiency rather than only the best single 
 理论上可以，但在项目时间和 HPC 资源有限的情况下，完全穷举并不现实。更合理的做法是先通过 preliminary results 缩小到有代表性的配置范围，再在这个范围内做更系统的分析。
 
 
-In theory that would be possible, but with limited project time and HPC resources, exhaustive exploration is not realistic. A more practical approach is to use the preliminary results to narrow the search to representative configurations and then study those systematically.
+==In theory that would be possible==, but with limit==ed project time and HPC resources==, exhaustive exploration is not realistic. 
+
+A more practical approach is to use the preliminary results to ==narrow the search to representative configurations== and then study those systematically.
 
   
 ## 8. Why is profiling necessary if you already have runtime results?
@@ -82,7 +87,8 @@ In theory that would be possible, but with limited project time and HPC resource
 
 
 
-Runtime results can tell us which configuration is faster, but they do not explain why. Profiling helps separate time spent in MPI, OpenMP, and serial regions, and it also identifies important bottlenecks such as VecMDot and PCApply.
+Runtime results can tell us which configuration is faster, but they do not explain why. 
+Profiling helps separate time spent in MPI, OpenMP, and serial regions, and it also identifies important bottlenecks such as VecMDot and PCApply.
 
   
 
@@ -93,7 +99,8 @@ Runtime results can tell us which configuration is faster, but they do not expla
 
 
 
-At the moment, the results are primarily based on PETSc's `ex2` benchmark, so they first reflect the behaviour of that benchmark. Later work will test larger problem sizes, more nodes, and possibly other solvers or settings to assess how general these trends really are.
+At the moment, the results are primarily based on PETSc's `ex2` benchmark, so they first reflect the behaviour of that benchmark. 
+Later work will test larger problem sizes, more nodes, and possibly other solvers or settings to assess how general these trends really are.
 
   
 
@@ -134,4 +141,6 @@ The minimum viable outcome is a ==systematic single-node benchmark study includi
 
 
 
-Sparse matrix formats can affect ==memory access pattern==s, cache locality, and opportunities for vectorisation, all of which can influence the behaviour of the OpenMP backend. If only the default format is tested, a limitation caused by matrix storage could be mistaken for a limitation of OpenMP itself. I therefore treat this as a limited exploration rather than the main focus: if preliminary results suggest that the format matters, I will test `AIJSELL` or `SELL` to see whether the observed trends depend on the matrix format.
+Sparse matrix formats can affect ==memory access pattern==s, cache locality, and opportunities for vectorisation, all of which can influence the behaviour of the OpenMP backend.
+
+If only the default format is tested, a limitation caused by matrix storage could be mistaken for a limitation of OpenMP itself. I therefore treat this as a limited exploration rather than the main focus: if preliminary results suggest that the format matters, I will test `AIJSELL` or `SELL` to see whether the observed trends depend on the matrix format.
