@@ -8,3 +8,5 @@
 .trash/.obsidian/plugins/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+.obsidian/plugins/remotely-save/
+.obsidian/plugins/
