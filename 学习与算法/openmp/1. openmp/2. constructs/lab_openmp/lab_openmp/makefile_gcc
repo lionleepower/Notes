@@ -1,0 +1,85 @@
+CC = gcc
+FC = gfortran
+CFLAGS = -O3 -fopenmp
+FFLAGS = $(CFLAGS)
+LIBS ?=
+ifneq ($(MKLROOT),)
+    LIBS += -I$(MKLROOT)/include
+    LIBS += -L$(MKLROOT)/lib/intel64
+    LIBS += -lmkl_intel_lp64 -lmkl_core -lmkl_gnu_thread -lpthread -lm -ldl
+else ifneq ($(TACC_NVPL_DIR),)
+    LIBS += -I${TACC_NVPL_DIR}/include
+    LIBS += -L${TACC_NVPL_DIR}/lib
+    LIBS += -lnvpl_blas_lp64_gomp
+endif
+
+ifndef USE_FORTRAN
+  EXT = c
+  CMP = $(CC)
+  FLG = $(CFLAGS)
+else
+  EXT = f90
+  CMP = $(FC)
+  FLG = $(FFLAGS)
+endif
+
+EXECS = hello work work_serial daxpy daxpy daxpy2
+
+NTARR = 1 2 4 8 12 16 24 32 40 48 
+
+all: info $(EXECS)
+
+info:
+	@echo "info : $(HOSTNAME) EXT= $(EXT) CMP= $(CMP) FLG= $(FLG)"
+
+hello: hello.$(EXT)
+	$(CMP) $(FLG) $? -o $@
+
+daxpy: daxpy.$(EXT)
+	$(CMP) $(FLG) $? -o $@
+
+work: work.$(EXT)
+	$(CMP) $(FLG) $? -lm -o $@
+
+work_serial: work_serial.$(EXT)
+	$(CMP) -O3 $? -lm -o $@
+
+daxpy2: daxpy2.$(EXT)
+	@if [ -z "${LIBS}" ]; then echo "Please check if MKL or NVPL is loaded"; exit 1; fi
+	$(CMP) $(FLG) $? $(LIBS) -o $@
+
+run_hello: hello
+	@for n in 2 4 8 12 16; do echo Number of threads=$$n; export OMP_NUM_THREADS=$$n; ./$?; echo; done
+
+run_work: work
+	@for n in 1 2 4 8 12 16; do echo Number of threads=$$n; export OMP_NUM_THREADS=$$n; echo OMP_SCHEDULE=$$OMP_SCHEDULE; ./$?; echo; done
+
+run_daxpy: daxpy
+	@rm -f $@ nt
+	@for n in $(NTARR); do echo Number of threads=$$n; echo $$n >> nt; export OMP_NUM_THREADS=$$n; ./$? 2>&1 | tee -a $@; echo; done
+
+run_daxpy2: daxpy2
+	@rm -f $@ nt
+	@for n in $(NTARR); do echo Number of threads=$$n; echo $$n >> nt; export OMP_NUM_THREADS=$$n; ./$? 2>&1 | tee -a $@; echo; done
+
+plot_daxpys: FORCE run_daxpy run_daxpy2
+	@awk '{print $$2}' run_daxpy > temp
+	@paste nt temp > run_daxpy
+	@rm -f temp
+	@awk '{print $$2}' run_daxpy2 > temp
+	@paste nt temp > run_daxpy2
+	@rm -f temp
+	@echo 'set xlabel "thread count"' > plot
+	@echo 'set ylabel "MFLOPS"' >> plot
+	@echo 'plot "run_daxpy" with linespoints' >> plot
+	@echo 'replot "run_daxpy2" with linespoints' >> plot
+	@gnuplot --persist -s plot
+
+FORCE:
+	rm -f plot temp
+
+clean:
+	rm -f $(EXECS)
+
+realclean: clean FORCE
+	rm -f run* nt
