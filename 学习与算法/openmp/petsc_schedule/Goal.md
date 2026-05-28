@@ -33,12 +33,25 @@ This extension allows the project to compare how PETSc behaves under different s
 The target problem sizes should include approximately 20 million and 40 million unknowns, where “unknowns” refers to the total number of grid points or degrees of freedom.
 
 **Suggested problem sizes:**
+## 2D five-point stencil
 
-|Problem type|Approx. 20M unknowns|Approx. 40M unknowns|
-|---|--:|--:|
-|2D five-point stencil|`4500 × 4500`|`6400 × 6400`|
-|3D seven-point stencil|`272 × 272 × 272`|`345 × 345 × 345`|
+|Scale|Grid size|Unknowns|
+|---|---|---|
+|Small|`1000 × 1000`|1.00M|
+|Medium-small|`2240 × 2240`|5.02M|
+|Medium|`3160 × 3160`|9.99M|
+|Large|`4500 × 4500`|20.25M|
+|Very large|`6400 × 6400`|40.96M|
 
+## 3D seven-point stencil
+
+| Scale        | Grid size         | Unknowns |
+| ------------ | ----------------- | -------- |
+| Small        | `100 × 100 × 100` | 1.00M    |
+| Medium-small | `171 × 171 × 171` | 5.00M    |
+| Medium       | `215 × 215 × 215` | 9.94M    |
+| Large        | `272 × 272 × 272` | 20.12M   |
+| Very large   | `342 × 342 × 342` | 40.00M   |
 **Measurable targets:**
 
 |Target|Description|
