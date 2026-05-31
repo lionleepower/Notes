@@ -35,6 +35,7 @@ The target problem sizes should include approximately 20 million and 40 million 
 **Suggested problem sizes:**
 ## 2D five-point stencil
 
+<<<<<<< Updated upstream
 |Scale|Grid size|Unknowns|
 |---|---|---|
 |Small|`1000 × 1000`|1.00M|
@@ -42,6 +43,12 @@ The target problem sizes should include approximately 20 million and 40 million 
 |Medium|`3160 × 3160`|9.99M|
 |Large|`4500 × 4500`|20.25M|
 |Very large|`6400 × 6400`|40.96M|
+=======
+| Problem type           | Approx. 20M unknowns | Approx. 40M unknowns |     |
+| ---------------------- | -------------------: | -------------------: | --- |
+| 2D five-point stencil  |        `4500 × 4500` |        `6400 × 6400` |     |
+| 3D seven-point stencil |    `272 × 272 × 272` |    `345 × 345 × 345` |     |
+>>>>>>> Stashed changes
 
 ## 3D seven-point stencil
 
@@ -54,13 +61,13 @@ The target problem sizes should include approximately 20 million and 40 million 
 | Very large   | `342 × 342 × 342` | 40.00M   |
 **Measurable targets:**
 
-|Target|Description|
-|---|---|
-|Small cases|Include at least one small baseline case|
-|Medium cases|Include at least one medium case|
-|Large cases|Include approximately 20M unknowns|
-|Very large cases|Include approximately 40M unknowns, if feasible|
-|Stability|Ensure runs complete successfully without memory or convergence issues|
+| Target           | Description                                                            |
+| ---------------- | ---------------------------------------------------------------------- |
+| Small cases 1m   | Include at least one small baseline case                               |
+| Medium cases 5m  | Include at least one medium case                                       |
+| Large cases 10 m | Include approximately 20M unknowns                                     |
+| Very large cases | Include approximately 40M unknowns, if feasible                        |
+| Stability        | Ensure runs complete successfully without memory or convergence issues |
 
 ---
 
@@ -70,11 +77,11 @@ The experiment should test different rank-thread combinations at the same total 
 
 **Example configurations:**
 
-|Total cores|MPI-only|Hybrid configurations|
-|--:|--:|---|
-|32|`32 × 1`|`16 × 2`, `8 × 4`, `4 × 8`|
-|64|`64 × 1`|`32 × 2`, `16 × 4`, `8 × 8`, `4 × 16`|
-|128|`128 × 1`|`64 × 2`, `32 × 4`, `16 × 8`, `8 × 16`, `4 × 32`|
+| Total cores |  MPI-only | Hybrid configurations                            |
+| ----------: | --------: | ------------------------------------------------ |
+|          32 |  `32 × 1` | `16 × 2`, `8 × 4`, `4 × 8`                       |
+|          64 |  `64 × 1` | `32 × 2`, `16 × 4`, `8 × 8`, `4 × 16`            |
+|         128 | `128 × 1` | `64 × 2`, `32 × 4`, `16 × 8`, `8 × 16`, `4 × 32` |
 
 **Measurable targets:**
 
@@ -93,12 +100,12 @@ The main metrics should include runtime, speedup, parallel efficiency, and hybri
 
 **Metrics:**
 
-|Metric|Definition|
-|---|---|
-|Runtime|`T(p)`|
-|Speedup|`S(p) = T(1) / T(p)`|
-|Parallel efficiency|`E(p) = S(p) / p`|
-|Hybrid relative speedup|`T(MPI-only) / T(hybrid)` at the same total core count|
+| Metric                  | Definition                                             |
+| ----------------------- | ------------------------------------------------------ |
+| Runtime                 | `T(p)`                                                 |
+| Speedup                 | `S(p) = T(1) / T(p)`                                   |
+| Parallel efficiency     | `E(p) = S(p) / p`                                      |
+| Hybrid relative speedup | `T(MPI-only) / T(hybrid)` at the same total core count |
 
 **Measurable targets:**
 
@@ -112,7 +119,7 @@ The main metrics should include runtime, speedup, parallel efficiency, and hybri
 
 ---
 
-# Objective 5: Compare Communication Patterns between 2D and 3D Problems
+# ==Objective 5: Compare Communication Patterns between 2D and 3D Problems==
 In the 2D case, each subdomain communicates with up to four neighbouring subdomains. In the 3D case, each subdomain communicates with up to six neighbouring subdomains across the faces of the local 3D block.
 
 **Comparison points:**
@@ -211,13 +218,22 @@ The current benchmark is based on stencil-derived sparse matrices. However, PETS
 
 ## Matrix forms to consider
 
-| Matrix form                   | PETSc type / approach                    | Purpose                                                             |
-| ----------------------------- | ---------------------------------------- | ------------------------------------------------------------------- |
-| Standard sparse matrix        | `MATAIJ` / `MATMPIAIJ`                   | Baseline compressed sparse row sparse matrix                        |
-| Block sparse matrix           | `MATBAIJ` / `MATMPIBAIJ`                 | Tests whether block structure improves cache locality and threading |
-| Symmetric block sparse matrix | `MATSBAIJ` / `MATMPISBAIJ`               | Useful if the operator is symmetric; may reduce storage and work    |
-| Matrix-free operator          | `MATSHELL` or matrix-free PETSc approach | Tests performance without explicitly storing the sparse matrix      |
-| Structured-grid operator      | DMDA-based matrix/operator               | Tests PETSc’s structured-grid support for stencil problems          |
+| Matrix form              | PETSc type / approach                    | Purpose                                                        |
+| ------------------------ | ---------------------------------------- | -------------------------------------------------------------- |
+| Standard sparse matrix   | `MATAIJ` / `MATMPIAIJ`                   | Baseline compressed sparse row sparse matrix                   |
+| Matrix-free operator     | `MATSHELL` or matrix-free PETSc approach | Tests performance without explicitly storing the sparse matrix |
+| Structured-grid operator | DMDA-based matrix/operator               | Tests PETSc’s structured-grid support for stencil problems     |
+| 2 st                     | SELL                                     |                                                                |
+|                          |                                          |                                                                |
+
+
+# Slovers
+try the different one
+
+
+Is more thread? 
+
+
 
 ---
 
