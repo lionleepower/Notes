@@ -50,4 +50,14 @@ maxCores = 128
 
 
 
-
+# 1 D
+| Total cores C | 1M problem | Valid?                   | 2M problem | Valid?         | 4M problem | Valid?                   | 16M problem | Valid?                   |
+| ------------: | ---------: | ------------------------ | ---------: | -------------- | ---------: | ------------------------ | ----------: | ------------------------ |
+|             1 |  1,048,576 | boundary / slightly high |  1,999,396 | too large      |  4,194,304 | too large                |  16,777,216 | too large                |
+|             2 |    524,288 | yes                      |    999,698 | yes / boundary |  2,097,152 | too large                |   8,388,608 | too large                |
+|             4 |    262,144 | yes                      |    499,849 | yes            |  1,048,576 | boundary / slightly high |   4,194,304 | too large                |
+|             8 |    131,072 | yes                      |    249,924 | yes            |    524,288 | yes                      |   2,097,152 | too large                |
+|            16 |     65,536 | yes                      |    124,962 | yes            |    262,144 | yes                      |   1,048,576 | boundary / slightly high |
+|            32 |     32,768 | yes                      |     62,481 | yes            |    131,072 | yes                      |     524,288 | yes                      |
+|            64 |     16,384 | yes                      |     31,241 | yes            |     65,536 | yes                      |     262,144 | yes                      |
+|           128 |      8,192 | too small                |     15,620 | yes            |     32,768 | yes                      |     131,072 | yes                      |

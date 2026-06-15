@@ -1,4 +1,4 @@
-# CSV、Bash 与 Slurm Size-Grid 批处理脚本
+qu# CSV、Bash 与 Slurm Size-Grid 批处理脚本
 
 ## 1. 学习目标
 
