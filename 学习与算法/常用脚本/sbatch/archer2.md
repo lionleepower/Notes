@@ -684,11 +684,11 @@ sbatch scripts/run_ex2_size_grid.sbatch
 |`${x:=v}`|如果 `x` 未设置或为空，把 `v` 赋值给 `x`，然后使用它|
 
 示例：
-
 ```
 x=""
-printf '<%s>\n' "${x:-fallback}"
+printf '[%s]\n'"${x:-fallback}"
 ```
+
 
 
 输出：
