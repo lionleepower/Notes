@@ -837,7 +837,7 @@ RANKS_LIST：
 
 ## 21. 什么是 CSV？
 
-CSV 是 Comma-Separated Values，意思是逗号分隔值。
+==CSV 是 Comma-Separated Values，意思是逗号分隔值==。
 
 例如：
 
@@ -1057,13 +1057,13 @@ scale,m,n,unknowns
 
 如果不跳过，脚本会把它当成真实问题规模。
 
-所以有：
+==所以有：==
 
 ```bash
 [[ "${SCALE}" == "scale" ]] && continue
 ```
 
-等价于：
+==等价于：==
 
 ```bash
 if [[ "${SCALE}" == "scale" ]]; then
