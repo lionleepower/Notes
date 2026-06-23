@@ -46,6 +46,14 @@ Suzhou, China
 GitHub: [https://github.com/lionleepower/petsc-benchmark-suite](https://github.com/lionleepower/petsc-benchmark-suite)
 
 **Project Description:**  
+
+Built an automated PETSc benchmarking workflow on ARCHER2 to evaluate MPI-only and hybrid MPI/OpenMP performance across problem sizes up to 40.96M unknowns and 128 cores.
+
+Implemented Slurm-based experiment scripts, parsed runtime logs with Python, and generated scaling metrics including runtime, speedup, and parallel efficiency.
+
+Analysed performance behaviour across core counts, thread configurations, sparse matrix formats, and problem sizes to identify scalability bottlenecks.
+
+
 Developed a reproducible benchmarking and analysis framework for evaluating PETSc linear solver performance under different MPI and hybrid MPI+OpenMP configurations. The project focuses on large-scale performance experiments, automated job submission, runtime log processing, and scalability analysis on the ARCHER2 supercomputing system.
 
 **Technical Stack:**  
