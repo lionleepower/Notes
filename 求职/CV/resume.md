@@ -1,135 +1,144 @@
-LI Leyan | 李乐岩
+# LI Leyan | 李乐岩
 
-Email: [leyanpower@gmail.com /](mailto:leyanpower@gmail.com%20/) 3073751449@qq.com
+Email: [leyanpower@gmail.com](mailto:leyanpower@gmail.com) / [3073751449@qq.com](mailto:3073751449@qq.com)  
+Phone: +86 18805506898  
+GitHub: [https://github.com/lionleepower](https://github.com/lionleepower)
 
-Phone: +86 18805506898
+---
 
-GitHub: https://github.com/lionleepower
+## Education
 
-----------------------------------------------------------------------------------
+**University of Edinburgh**  
+**MSc High Performance Computing with Data Science**  
+Sep 2025 – Present, Expected Sep 2026  
+Edinburgh, United Kingdom
 
-**Education**
+Relevant Topics: Parallel Computing, MPI Programming, OpenMP, Performance Engineering, Distributed Systems, High Performance Data Analytics
 
-**University of Edinburgh**
+**University of Liverpool**  
+**BSc Computer Science, First Class Honours**  
+Sep 2023 – Jun 2025  
+Liverpool, United Kingdom
 
-MSc High Performance Computing with Data Science  
-Sep 2025 – Present (Expected Sep 2026)
+**Xi’an Jiaotong-Liverpool University**  
+**BSc Information and Computer Science**  
+Sep 2021 – Jun 2023  
+Suzhou, China
 
-Relevant Topics:  
-Parallel Computing, MPI Programming, Performance Engineering, Distributed Systems
+---
 
-**University of Liverpool**
+## Technical Skills
 
-BSc Computer Science (First Class Honours)
+**Programming Languages:** C/C++, Python, SQL, JavaScript, HTML, CSS
 
-Sep 2023 – Jun 2025
+**High Performance Computing:** MPI, OpenMP, PETSc, Slurm, ARCHER2, parallel program benchmarking, strong scaling analysis, hybrid MPI+OpenMP execution
 
-**Xi’an Jiaotong-Liverpool University**
+**Data Analysis and Machine Learning:** PyTorch, ePyMARL, NumPy, Pandas, Matplotlib, experiment logging, performance visualisation
 
-BSc Information and Computer Science
+**Systems and Tools:** Linux, Git, Bash scripting, VS Code, REST API integration
 
-Sep 2021 – Jun 2023
+---
 
-----------------------------------------------------------------------------------------------  
-**Summary**
+## Project Experience
 
-High Performance Computing and Data Science MSc student with strong experience in parallel and distributed computing. Skilled in C/C++, Python, MPI, and OpenMP, with practical experience running large-scale experiments on the ARCHER2 supercomputing system. Interested in scalable systems, performance engineering, and the intersection of HPC and machine learning.
-
----------------------------------------------------------------------------------------------------
-
-**Technical Skills**
-
-**Programming Languages**
-
-C/C++, Python, SQL
-
-**Parallel / HPC**
-
-MPI, OpenMP, PETSc, Slurm, ARCHER2
-
-**Machine Learning**
-
-PyTorch, ePyMARL
-
-**Tools & Environment**
-
-Linux, Git, VS Code
-
-------------------------------------------------------------------------------------------------------
-
-**Projects**
-
-**1.**    **PETSc Benchmark and Performance Analysis Suite**
+### PETSc Benchmark and Performance Analysis Suite
 
 GitHub: [https://github.com/lionleepower/petsc-benchmark-suite](https://github.com/lionleepower/petsc-benchmark-suite)
 
-Developed a reproducible benchmarking framework for analysing PETSc linear solver performance under different parallel configurations.
+**Project Description:**  
+Developed a reproducible benchmarking and analysis framework for evaluating PETSc linear solver performance under different MPI and hybrid MPI+OpenMP configurations. The project focuses on large-scale performance experiments, automated job submission, runtime log processing, and scalability analysis on the ARCHER2 supercomputing system.
 
-Designed automated Slurm job pipelines to conduct strong scaling and hybrid MPI+OpenMP experiments on the ARCHER2 supercomputer.
+**Technical Stack:**  
+C, PETSc, MPI, OpenMP, Slurm, Bash, Python, Pandas, Matplotlib, Linux, ARCHER2
 
-Built Python-based analysis tools to process runtime logs, generate CSV datasets, and produce speedup and parallel efficiency visualisations.
+**Work Completed:**
 
-Performed performance analysis comparing MPI-only and hybrid execution models, identifying communication overhead and scalability limits.
+- Built an automated benchmarking workflow for PETSc solver experiments, covering compilation, job submission, runtime logging, result collection, and post-processing.
+    
+- Designed Slurm job scripts to run strong scaling and hybrid MPI+OpenMP experiments across multiple process and thread configurations on ARCHER2.
+    
+- Implemented Python analysis scripts to parse raw runtime logs, generate structured CSV datasets, and calculate speedup, parallel efficiency, and runtime trends.
+    
+- Compared MPI-only and hybrid MPI+OpenMP execution models to evaluate how communication overhead, thread-level parallelism, and process placement affect solver scalability.
+    
+- Analysed performance bottlenecks in large-scale sparse linear solver experiments, identifying cases where hybrid execution may reduce MPI communication but introduce thread-level overhead.
+    
+- Organised the project into a reproducible research workflow with clear documentation, enabling repeated experiments and consistent performance comparison.
+    
 
-**2.**    **HPC Mini Applications (MPI / OpenMP) — in progress**
+---
 
-Implemented a collection of classical high-performance computing mini-applications in C, including:
+### Value Function Factorisation in Multi-Agent Actor-Critic Methods
 
-- 2D heat diffusion simulation using stencil computation
-- parallel matrix multiplication
-- N-body simulation
+**Project Description:**  
+Investigated value function factorisation methods in cooperative multi-agent reinforcement learning by integrating VDN-style and QMIX-style critic architectures into Multi-Agent Proximal Policy Optimization. The project aimed to study whether factorised critics can improve coordination, learning stability, and policy performance in multi-agent environments.
 
-Designed MPI-based domain decomposition and halo exchange mechanisms for distributed-memory parallelism.
+**Technical Stack:**  
+Python, PyTorch, ePyMARL, PyMARL, Reinforcement Learning, MAPPO, VDN, QMIX, Matrix Game, Predator–Prey
 
-Integrated OpenMP thread-level parallelism and evaluated hybrid MPI+OpenMP configurations.
+**Work Completed:**
 
-Conducted scaling experiments to analyse parallel efficiency, load balance, and memory behaviour under different process and thread configurations.
+- Implemented custom MAPPO, MAPPO-VDN, and MAPPO-QMIX variants within the ePyMARL framework.
+    
+- Modified critic network structures to support value decomposition, including additive VDN-style factorisation and monotonic QMIX-style mixing.
+    
+- Designed and conducted experiments in Matrix Game and Predator–Prey environments to evaluate convergence speed, coordination behaviour, and final policy performance.
+    
+- Built experiment logging and result analysis workflows to compare different algorithms using metrics such as test return, convergence stability, and coordination quality.
+    
+- Analysed the limitations of applying value factorisation to actor-critic methods, including instability caused by critic approximation error and non-stationarity in multi-agent training.
+    
+- Documented implementation details, algorithmic design choices, experimental results, and limitations in a full academic dissertation.
+    
 
-**Value Function Factorisation in Multi-Agent Actor-Critic Methods**
+---
 
-Investigated factorised critic architectures (VDN, QMIX) within Multi-Agent Proximal Policy Optimization (MAPPO) to improve coordination in cooperative multi-agent environments.
+### String Art Generator Based on Radon Transform
 
-Implemented custom MARL algorithms using Python and PyTorch based on the PyMARL / ePyMARL framework.
-
-Conducted experimental evaluation in Matrix Game and Predator–Prey environments, analysing convergence behaviour and coordination performance.
-
-Explored improvements to reward shaping and critic factorisation strategies to enhance learning stability.
-
------------------------------------------------------------------------------------------------------------
-
-**Research Experience**
-
-**String Art Generator Based on Radon Transform**  
-Summer Undergraduate Research Programme  
+**Summer Undergraduate Research Programme**  
 Jun 2024 – Aug 2024
 
-Developed an algorithmic pipeline that converts images into string-based artwork using Radon transform techniques.
+**Project Description:**  
+Developed an algorithmic image-to-string-art generation system using Radon transform techniques. The project converts input images into string-based artwork by extracting structural features and optimising line placement.
 
-Implemented image preprocessing and contrast enhancement algorithms to improve feature extraction.
+**Technical Stack:**  
+Python, Image Processing, Radon Transform, NumPy, OpenCV, Algorithm Design
 
-Designed a parameter control interface enabling interactive adjustment of artistic generation parameters.
+**Work Completed:**
 
-**-------------------------------------------------------------------------------------------**
+- Designed an image preprocessing pipeline including grayscale conversion, contrast enhancement, and feature extraction.
+    
+- Applied Radon transform techniques to identify dominant image structures and guide string placement.
+    
+- Implemented parameter control mechanisms to adjust visual style, line density, contrast, and generation quality.
+    
+- Built an interactive workflow for testing different parameter settings and improving visual output.
+    
 
-**Publication**
+---
 
-Li, Leyan (2024)
+## Internship Experience
 
-Convolutional Neural Networks (CNNs)-based Medical Image Analysis
+### Anhui Esou Information Technology Co., Ltd
 
-International Conference on Engineering Management, Information Technology and Intelligence (EMITI 2024)
+**Front-end Developer Intern**  
+Aug 2023 – Sep 2023  
+Anhui, China
 
-  
------------------------------------------------------------------------------------------------------------
+**Work Completed:**
 
-**Internship Experience**
+- Developed a parking management interface using HTML, CSS, and JavaScript.
+    
+- Implemented dynamic UI components including real-time vehicle count monitoring and weather information display.
+    
+- Integrated front-end pages with backend REST APIs to support data display and interaction.
+    
+- Collaborated with backend engineers to debug interface issues and improve page usability.
+    
 
-**Anhui Esou Information Technology Co., Ltd**  
-Front-end Developer Intern  
-Aug 2023 – Sep 2023
+---
 
-Developed a parking management interface using HTML, CSS, and JavaScript.
+## Publication
 
-Implemented dynamic UI components including real-time vehicle count monitoring and weather information display.
-
-Collaborated with backend engineers to integrate front-end components with REST APIs.
+**Li, Leyan.** “Convolutional Neural Networks Based Medical Image Analysis.”  
+International Conference on Engineering Management, Information Technology and Intelligence, EMITI 2024.
