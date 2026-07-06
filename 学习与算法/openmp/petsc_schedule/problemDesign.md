@@ -20,6 +20,19 @@ maxCores = 128
 
 40.96M: 2,4,8,16,32,64 nodes
 
+
+==map profiling:==
+
+|Problem size|Nodes|MPI ranks per node|Threads|Purpose|
+|--:|--:|--:|--:|---|
+|20.25M|2|128|1|MPI-heavy baseline|
+|20.25M|2|16|8|OpenMP-heavy comparison|
+|20.25M|8|128|1|MPI-heavy medium scale|
+|20.25M|8|16|8|OpenMP-heavy medium scale|
+|20.25M|16|128|1|MPI-heavy large scale|
+|20.25M|16|16|8|OpenMP-heavy large scale|
+
+
 |   nodes | ppn | MPI ranks | T=1 N range | T=2 N range | T=4 N range | T=8 N range |
 | ------: | --: | --------: | ----------: | ----------: | ----------: | ----------: |
 | ***1*** |   1 |         1 |      10k-1m |      20k-2m |      40k-4m |      80k-8m |
