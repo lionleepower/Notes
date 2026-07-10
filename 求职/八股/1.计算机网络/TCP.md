@@ -961,8 +961,8 @@
 ## 38. 关联
 
 - [[网络分层模型：OSI 七层、TCP-IP 四层、五层协议栈]] ← TCP/UDP 属于传输层
-- [[HTTP 面试常见题]] ← HTTP 基于 TCP，HTTP/3 基于 UDP（QUIC）
-- [[IP 面试常见题]] ← 输入 URL 全过程中的三次握手环节
+- [[HTTP]] ← HTTP 基于 TCP，HTTP/3 基于 UDP（QUIC）
+- [[IP]] ← 输入 URL 全过程中的三次握手环节
 - [[UDP]] ← 无连接、面向报文，与 TCP 对照
 - [[TIME_WAIT 与 2MSL]] ← 本笔记重点，可单独拆出
 - [[SYN 攻击]] ← 半连接队列被打满

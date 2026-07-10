@@ -869,9 +869,9 @@
 
 ## 22. 关联
 
-- [[TCP 与 UDP 面试常见题]] ← HTTP 基于 TCP，HTTP/3 基于 UDP
+- [[TCP]] ← HTTP 基于 TCP，HTTP/3 基于 UDP
 - [[网络分层模型：OSI 七层、TCP-IP 四层、五层协议栈]] ← HTTP 属于应用层
-- [[IP 面试常见题]] ← Cookie 与 Session、DNS、输入 URL 全过程
+- [[IP]] ← Cookie 与 Session、DNS、输入 URL 全过程
 - [[HTTPS 与 TLS 握手]] ← 本笔记重点，可单独拆出
 - [[QUIC]] ← HTTP/3 传输协议
 - [[XSS]] / [[CSRF]] ← Web 攻击，常一起考
