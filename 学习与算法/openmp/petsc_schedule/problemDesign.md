@@ -1,5 +1,5 @@
 
-10,000 < N / C < 1,000,000
+筛选规则： 10,000 < N / C < 1,000,000
 
 N = total number of unknowns = problem size = m * n
 C = total number of cores = nodes * ppn * threads
@@ -7,10 +7,10 @@ N / C = unknowns per core
 
 ppn = processes per node = MPI ranks per node
 threads = threads per MPI rank = [1, 2, 4, 8]
-nodes = [1, 2, 4]
 maxCores = 128
 
 
+benchmark sweep(128 cores):
 
 5.02M: 1,2,4,8 nodes
 
@@ -32,6 +32,11 @@ maxCores = 128
 |20.25M|16|128|1|MPI-heavy large scale|
 |20.25M|16|16|8|OpenMP-heavy large scale|
 
+
+
+
+
+表格参照与筛选
 
 |   nodes | ppn | MPI ranks | T=1 N range | T=2 N range | T=4 N range | T=8 N range |
 | ------: | --: | --------: | ----------: | ----------: | ----------: | ----------: |
