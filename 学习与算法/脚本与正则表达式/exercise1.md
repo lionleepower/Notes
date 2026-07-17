@@ -84,3 +84,9 @@ cat dog cat fish dog bird
 > 7. `\d{4}-\d{2}-\d{2}` —— `{4}`/`{2}` 是精确次数
 
 从第 1 题往下敲，卡在哪题告诉我题号，我给你拆。全过了的话我再上一组带 `?`懒惰匹配和捕获组提取的进阶题。
+
+`cd /tmp && cat > correct.py << 'EOF' def cn_to_int(text): digits = {"零":0,"一":1,"二":2,"三":3,"四":4,"五":5, "六":6,"七":7,"八":8,"九":9} units = {"十":10,"百":100,"千":1000} total = 0 # 最终结果(累计已结算的"万/亿"节) section = 0 # 当前"万"节内的累计值 cur = 0 # 刚读到的、还没结算的个位数字 for ch in text: if ch in digits: cur = digits[ch] # 记住这个数字,等后面的单位来乘 elif ch in units: if cur == 0: cur = 1 # 处理"十五"这种十前无数字 → 当作一十 section += cur * units[ch] # 关键:乘上位权再加进 section cur = 0 elif ch == "万": section = (section + cur) * 10000 total += section section = cur = 0 elif ch == "亿": section = (section + cur) * 10**8 total += section section = cur = 0 return total + section + cur for t in ["三百二十一", "三百", "二十", "十五", "一千零五", "三万二千一百"]: print(f"{t:<8} -> {cn_to_int(t)}") EOF python3 correct.py`
+
+Output
+
+`三百二十一 -> 321 三百 -> 300 二十 -> 20 十五 -> 15 一千零五 -> 1005 三万二千一百 -> 32100`
