@@ -1,0 +1,23 @@
+{
+  "skill_name": "obsidian-algo-note",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请你先进入 学习与算法/算法练习/经典算法/1.Patterns/原始稿件，里面有我新加入的一个稿件：6.0.1子集型回溯；请你根据此稿件，在 1.Patterns 文件夹中生成 6.0 回溯算法、6.1 子集型回溯 这两个文件；同样一些我不太懂的知识可以同步到 0.基础概念",
+      "expected_output": "在 1.Patterns 生成「6.0 回溯算法.md」（专题模式）和「6.1 子集型回溯.md」，callout 标记行独占一行且默认折叠，标签在第一行且来自固定集合，复杂度用 $O(...)$，wiki 链接指向真实文件并链回原始稿件；拆出的语言知识点写入 0.基础概念 的 Python_xxx.md；原始稿件未被修改",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "帮我把这道题整理成笔记：131. 分割回文串。我的代码是 Python 的：class Solution:\n    def partition(self, s: str) -> List[List[str]]:\n        ans = []\n        path = []\n        def dfs(i):\n            if i == len(s):\n                ans.append(path[:])\n                return\n            for j in range(i, len(s)):\n                t = s[i:j+1]\n                if t == t[::-1]:\n                    path.append(t)\n                    dfs(j+1)\n                    path.pop()\n        dfs(0)\n        return ans",
+      "expected_output": "单题模式笔记，文件名「编号 + 空格 + 中文主题.md」并放入 1.Patterns，保留用户原有代码思路，H1 为「131. 分割回文串」，含一句话总结与模板归纳，callout 格式符合硬约束，带难度标签",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我老是搞不清 python 里 path[:] 和 path 直接 append 进结果的区别，帮我在库里建个笔记讲清楚",
+      "expected_output": "路由到 0.基础概念（先检查是否已有 Python_赋值与拷贝.md 等覆盖同一知识点的笔记，有则更新而非新建），按 concept-note 模板组织，含核心思路/易错点/一句话总结/模板归纳，复杂度用 LaTeX",
+      "files": []
+    }
+  ]
+}
